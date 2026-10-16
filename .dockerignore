@@ -1,0 +1,14 @@
+**/node_modules
+**/target
+**/dist
+**/data
+**/coverage
+*.jfr
+.git
+.github
+.idea
+.vscode
+**/.DS_Store
+docs
+scripts
+*.pdf

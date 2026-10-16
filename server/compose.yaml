@@ -1,0 +1,9 @@
+name: ads-csv-processor
+
+services:
+  postgres:
+    extends:
+      file: ../docker-compose.yml
+      service: postgres
+volumes:
+  pgdata: {}

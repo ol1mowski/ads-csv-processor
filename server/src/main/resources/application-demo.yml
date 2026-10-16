@@ -1,0 +1,9 @@
+app:
+  security:
+    auth:
+      allow-generated-secret: true
+    users:
+      - username: alice
+        password-hash: "{bcrypt}$2a$10$p6AzXdmCk3GJmqbD9smD3uxFb9u8mBz2uCE4Aqo7fnpRUBxQCWPSu"
+      - username: bob
+        password-hash: "{bcrypt}$2a$10$BI0yRJIbszGcmbDnF1RSmeTGyGAjULAbPEbUQzd6VPNw5.AL04z3K"

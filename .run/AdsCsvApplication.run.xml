@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AdsCsvApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="ads-csv-processor" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="pl.oliwier.adscsv.AdsCsvApplication" />
+    <option name="ACTIVE_PROFILES" value="demo" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,18 @@
+**/target/
+**/node_modules/
+**/dist/
+**/coverage/
+**/data/
+*.jfr
+*.log
+.idea/
+.vscode/
+.DS_Store
+.env
+.env.*
+!.env.example
+server/src/main/resources/static/
+docker-compose.override.yml
+
+# materiały rekrutacyjne
+zadanie_rekrutacyjne_*.pdf

@@ -1,0 +1,68 @@
+spring:
+  application:
+    name: ads-csv-processor
+  docker:
+    compose:
+      lifecycle-management: start-only
+  main:
+    keep-alive: true
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/adscsv}
+    username: ${DB_USER:adscsv}
+    password: ${DB_PASSWORD:adscsv}
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  servlet:
+    multipart:
+      enabled: false
+  mvc:
+    formcontent:
+      filter:
+        enabled: false
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+server:
+  shutdown: graceful
+  tomcat:
+    connection-timeout: 60s
+    max-swallow-size: 2MB
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      cache:
+        time-to-live: 1s
+app:
+  security:
+    auth:
+      jwt-secret: ${JWT_SECRET:}
+      allow-generated-secret: false
+      token-ttl: 8h
+      secure-cookies: ${COOKIE_SECURE:false}
+  storage:
+    root: ${APP_STORAGE_ROOT:./data}
+  upload:
+    max-size: 5GB
+  processing:
+    enabled: true
+    workers: 2
+    poll-interval: 1s
+    progress-interval: 1s
+    check-every: 1MB
+    max-attempts: 3
+    min-rejected-to-abort: 1000
+    max-rejected-ratio: 0.01
+    rejected-samples: 10
+    shutdown-wait: 10s
+  history:
+    max-page-size: 100
